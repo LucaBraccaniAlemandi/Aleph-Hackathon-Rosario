@@ -1,0 +1,41 @@
+{
+  "name": "aleph-hackathon-rosario",
+  "private": true,
+  "type": "module",
+  "packageManager": "bun@1.4.2",
+  "engines": {
+    "node": ">=24.18.0"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "postinstall": "if git rev-parse --git-dir >/dev/null 2>&1; then lefthook install; fi",
+    "dev": "concurrently --kill-others --names mock,web \"bun run api:mock\" \"bun run --filter web dev\"",
+    "lint": "biome lint .",
+    "format": "biome format --write .",
+    "typecheck": "bun run --filter '*' typecheck",
+    "test": "bun run --filter '*' test",
+    "build": "bun run --filter '*' build",
+    "check": "biome check . && bun run typecheck && bun run test && bun run build && bun run contracts:lint",
+    "contracts:gen": "bun run --filter @repo/contracts gen",
+    "contracts:lint": "bun run --filter @repo/contracts lint",
+    "contracts:stale": "bun run contracts:gen && git status --porcelain --untracked-files=all -- packages/contracts/src/gen | (! grep .)",
+    "api:mock": "bun run --filter @repo/contracts mock",
+    "db:up": "docker compose up -d db",
+    "db:wait": "dbmate wait",
+    "db:new": "dbmate new",
+    "db:migrate": "if ls db/migrations/*.sql >/dev/null 2>&1; then dbmate --no-dump-schema up; else echo 'No migrations in db/migrations, nothing to apply.'; fi",
+    "db:rollback": "dbmate --no-dump-schema rollback",
+    "leaks": "node scripts/check-leaks.mjs",
+    "leaks:all": "node scripts/check-leaks.mjs --all"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.9",
+    "concurrently": "10.0.7",
+    "dbmate": "2.38.2",
+    "lefthook": "2.2.4",
+    "typescript": "6.0.3"
+  }
+}
