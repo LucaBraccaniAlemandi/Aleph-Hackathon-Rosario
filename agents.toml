@@ -1,0 +1,217 @@
+# Skills and role agents for every agent session in this repo.
+# Install with `bun run skills:install`. Pin every remote entry to a full commit SHA,
+# because agents.lock is not committed.
+version = 1
+agents = ["claude", "codex"]
+
+[trust]
+github_repos = [
+  "anthropics/claude-plugins-official",
+  "jakubkrehel/make-interfaces-feel-better",
+  "mattpocock/skills",
+  "pbakaus/impeccable",
+  "soundOfff/skills",
+]
+
+# The flow kit and everyday skills, from soundOfff/skills.
+[[skills]]
+name = "flow-mode"
+source = "soundOfff/skills"
+ref = "d90454a5e97a7a33597c081350e2bb024f160e65"
+path = "skills/flow-mode"
+
+[[skills]]
+name = "flow-setup"
+source = "soundOfff/skills"
+ref = "d90454a5e97a7a33597c081350e2bb024f160e65"
+path = "skills/flow-setup"
+
+[[skills]]
+name = "flow-help"
+source = "soundOfff/skills"
+ref = "d90454a5e97a7a33597c081350e2bb024f160e65"
+path = "skills/flow-help"
+
+[[skills]]
+name = "flow-create"
+source = "soundOfff/skills"
+ref = "d90454a5e97a7a33597c081350e2bb024f160e65"
+path = "skills/flow-create"
+
+[[skills]]
+name = "flow-to-issues"
+source = "soundOfff/skills"
+ref = "d90454a5e97a7a33597c081350e2bb024f160e65"
+path = "skills/flow-to-issues"
+
+[[skills]]
+name = "flow-build"
+source = "soundOfff/skills"
+ref = "d90454a5e97a7a33597c081350e2bb024f160e65"
+path = "skills/flow-build"
+
+[[skills]]
+name = "flow-to-pr"
+source = "soundOfff/skills"
+ref = "d90454a5e97a7a33597c081350e2bb024f160e65"
+path = "skills/flow-to-pr"
+
+[[skills]]
+name = "flow-subagent"
+source = "soundOfff/skills"
+ref = "d90454a5e97a7a33597c081350e2bb024f160e65"
+path = "skills/flow-subagent"
+
+[[skills]]
+name = "flow-tdd"
+source = "soundOfff/skills"
+ref = "d90454a5e97a7a33597c081350e2bb024f160e65"
+path = "skills/flow-tdd"
+
+[[skills]]
+name = "whats-next"
+source = "soundOfff/skills"
+ref = "d90454a5e97a7a33597c081350e2bb024f160e65"
+path = "skills/whats-next"
+
+[[skills]]
+name = "flow-code-check"
+source = "soundOfff/skills"
+ref = "d90454a5e97a7a33597c081350e2bb024f160e65"
+path = "skills/flow-code-check"
+
+[[skills]]
+name = "flow-code-review"
+source = "soundOfff/skills"
+ref = "d90454a5e97a7a33597c081350e2bb024f160e65"
+path = "skills/flow-code-review"
+
+[[skills]]
+name = "flow-code-quality-review"
+source = "soundOfff/skills"
+ref = "d90454a5e97a7a33597c081350e2bb024f160e65"
+path = "skills/flow-code-quality-review"
+
+[[skills]]
+name = "flow-design-check"
+source = "soundOfff/skills"
+ref = "d90454a5e97a7a33597c081350e2bb024f160e65"
+path = "skills/flow-design-check"
+
+[[skills]]
+name = "flow-adv-review"
+source = "soundOfff/skills"
+ref = "d90454a5e97a7a33597c081350e2bb024f160e65"
+path = "skills/flow-adv-review"
+
+[[skills]]
+name = "grilling"
+source = "soundOfff/skills"
+ref = "d90454a5e97a7a33597c081350e2bb024f160e65"
+path = "skills/grilling"
+
+[[skills]]
+name = "domain-modeling"
+source = "soundOfff/skills"
+ref = "d90454a5e97a7a33597c081350e2bb024f160e65"
+path = "skills/domain-modeling"
+
+[[skills]]
+name = "prototype"
+source = "soundOfff/skills"
+ref = "d90454a5e97a7a33597c081350e2bb024f160e65"
+path = "skills/prototype"
+
+[[skills]]
+name = "research"
+source = "soundOfff/skills"
+ref = "d90454a5e97a7a33597c081350e2bb024f160e65"
+path = "skills/research"
+
+[[skills]]
+name = "diagnose"
+source = "soundOfff/skills"
+ref = "d90454a5e97a7a33597c081350e2bb024f160e65"
+path = "skills/diagnose"
+
+[[skills]]
+name = "test-audit"
+source = "soundOfff/skills"
+ref = "d90454a5e97a7a33597c081350e2bb024f160e65"
+path = "skills/test-audit"
+
+[[skills]]
+name = "react-best-practices"
+source = "soundOfff/skills"
+ref = "d90454a5e97a7a33597c081350e2bb024f160e65"
+path = "skills/react-best-practices"
+
+[[skills]]
+name = "react-composition-patterns"
+source = "soundOfff/skills"
+ref = "d90454a5e97a7a33597c081350e2bb024f160e65"
+path = "skills/react-composition-patterns"
+
+# Third-party skills, on the same pins as the kit.
+[[skills]]
+name = "grill-me"
+source = "mattpocock/skills"
+ref = "697d4ce9742da558fd1ba6697c8e9775e2e302dd"
+path = "skills/productivity/grill-me"
+
+[[skills]]
+name = "grill-with-docs"
+source = "mattpocock/skills"
+ref = "697d4ce9742da558fd1ba6697c8e9775e2e302dd"
+path = "skills/engineering/grill-with-docs"
+
+[[skills]]
+name = "resolving-merge-conflicts"
+source = "mattpocock/skills"
+ref = "697d4ce9742da558fd1ba6697c8e9775e2e302dd"
+path = "skills/engineering/resolving-merge-conflicts"
+
+[[skills]]
+name = "impeccable"
+source = "pbakaus/impeccable"
+ref = "0760cdf3e907e7c96bb6524ac58933f5ffca4782"
+path = ".agents/skills/impeccable"
+
+[[skills]]
+name = "frontend-design"
+source = "anthropics/claude-plugins-official"
+ref = "44490cccaf6d9f82fdeec9416fbf7c9bd72575dc"
+path = "plugins/frontend-design/skills/frontend-design"
+
+[[skills]]
+name = "make-interfaces-feel-better"
+source = "jakubkrehel/make-interfaces-feel-better"
+ref = "384562064fcdd99778fcbafd8729626fe6aab02f"
+path = "skills/make-interfaces-feel-better"
+
+# Read-only role agents for the flow skills, vendored from soundOfff/skills at the kit pin in
+# their native Claude and Codex formats so each keeps its model and tool limits.
+[[subagents]]
+name = "flow-code-mapper"
+source = "path:vendor/agents"
+targets = ["claude", "codex"]
+
+[[subagents]]
+name = "flow-reuse-auditor"
+source = "path:vendor/agents"
+targets = ["claude", "codex"]
+
+[[subagents]]
+name = "flow-design-mapper"
+source = "path:vendor/agents"
+targets = ["claude", "codex"]
+
+[[subagents]]
+name = "flow-researcher"
+source = "path:vendor/agents"
+targets = ["claude", "codex"]
+
+[[subagents]]
+name = "flow-fact-lookup"
+source = "path:vendor/agents"
+targets = ["claude", "codex"]
