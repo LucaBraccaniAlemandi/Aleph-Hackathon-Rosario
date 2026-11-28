@@ -1,0 +1,9 @@
+pre-commit:
+  piped: true
+  jobs:
+    - name: biome
+      glob: "*.{js,mjs,cjs,ts,tsx,jsx,json,jsonc,css}"
+      run: bunx biome check --write --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}
+      stage_fixed: true
+    - name: leaks
+      run: node scripts/check-leaks.mjs

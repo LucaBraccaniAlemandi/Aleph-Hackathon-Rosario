@@ -1,0 +1,33 @@
+openapi: 3.1.0
+info:
+  title: Hackathon API
+  version: 0.1.0
+  description: Source of truth for the HTTP API. Regenerate clients with `bun run contracts:gen` after editing.
+servers:
+  - url: /api
+security: []
+paths:
+  /health:
+    get:
+      operationId: getHealth
+      summary: Report whether the API is up
+      responses:
+        "200":
+          description: The API is up.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Health"
+              example:
+                status: ok
+components:
+  schemas:
+    Health:
+      type: object
+      required:
+        - status
+      properties:
+        status:
+          type: string
+          enum:
+            - ok

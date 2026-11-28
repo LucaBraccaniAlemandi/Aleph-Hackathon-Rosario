@@ -8,3 +8,10 @@ __pycache__/
 .venv/
 .ipynb_checkpoints/
 spikes/**/output/
+dist/
+.vercel/
+.flow/
+.scratch/
+.leak-patterns.local
+.claude/settings.local.json
+.claude/worktrees/
