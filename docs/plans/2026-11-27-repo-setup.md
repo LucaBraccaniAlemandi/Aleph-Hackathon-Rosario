@@ -2,7 +2,7 @@
 
 This plan turns the ideas repo into a bun monorepo the team can build on tomorrow. It adds a web app shell, an OpenAPI contract with generated Zod schemas, a Postgres setup, a Vercel deploy path, and a shared agent layer for Claude Code and Codex (skills, role agents, ADRs, glossary, design checks). It adds no product code. The hackathon judges only what we build on Saturday, so everything here is tooling, and a git tag marks where the scaffold ends.
 
-Status. Reviewed once by a Codex worker (GPT-6.2-Astra, xhigh), and every finding is folded in (Appendix F). Nothing is implemented. Execution starts on your go.
+Status. Implemented on 2026-11-27 in two pull requests, after one Codex review whose findings are all folded in (Appendix F).
 
 Settled with you on 2026-11-27.
 
