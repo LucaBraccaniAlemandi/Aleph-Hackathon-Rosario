@@ -23,3 +23,6 @@ agents.lock
 .claude/skills
 .claude/agents/
 .codex/agents/
+
+# Local browser automation output.
+.playwright-mcp/
