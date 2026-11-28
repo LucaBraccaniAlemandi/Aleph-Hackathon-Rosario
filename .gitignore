@@ -15,3 +15,14 @@ dist/
 .leak-patterns.local
 .claude/settings.local.json
 .claude/worktrees/
+
+# Written by `bun run skills:install` (dotagents) from agents.toml.
+agents.lock
+.agents/
+.agents/.gitignore
+.claude/skills
+.claude/agents/
+.codex/agents/
+
+# Local browser automation output.
+.playwright-mcp/

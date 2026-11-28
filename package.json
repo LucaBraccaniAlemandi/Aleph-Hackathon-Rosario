@@ -18,7 +18,8 @@
     "typecheck": "bun run --filter '*' typecheck",
     "test": "bun run --filter '*' test",
     "build": "bun run --filter '*' build",
-    "check": "biome check . && bun run typecheck && bun run test && bun run build && bun run contracts:lint",
+    "check": "biome check . && bun run typecheck && bun run test && bun run build && bun run contracts:lint && bun run check:design",
+    "check:design": "node scripts/check-design.mjs",
     "contracts:gen": "bun run --filter @repo/contracts gen",
     "contracts:lint": "bun run --filter @repo/contracts lint",
     "contracts:stale": "bun run contracts:gen && git status --porcelain --untracked-files=all -- packages/contracts/src/gen | (! grep .)",
@@ -29,7 +30,8 @@
     "db:migrate": "if ls db/migrations/*.sql >/dev/null 2>&1; then dbmate --no-dump-schema up; else echo 'No migrations in db/migrations, nothing to apply.'; fi",
     "db:rollback": "dbmate --no-dump-schema rollback",
     "leaks": "node scripts/check-leaks.mjs",
-    "leaks:all": "node scripts/check-leaks.mjs --all"
+    "leaks:all": "node scripts/check-leaks.mjs --all",
+    "skills:install": "bunx @sentry/dotagents@3.5.0 --project install"
   },
   "devDependencies": {
     "@biomejs/biome": "2.6.9",

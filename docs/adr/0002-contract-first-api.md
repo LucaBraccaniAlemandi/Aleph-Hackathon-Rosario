@@ -1,0 +1,3 @@
+# The API is contract-first, and the backend language is deferred
+
+`packages/contracts/openapi.yaml` is the single source of truth for every request and response. The web app consumes Zod schemas, a typed SDK, and TanStack Query options generated from it, and a Prism mock serves it before any backend exists. We have not chosen between Node and Python yet, so the contract is the one thing both can honor: a Node API imports the generated Zod schemas, and a Python API generates Pydantic models from the same file. Changing the API means changing the yaml first, then regenerating, which CI enforces with `contracts:stale`.
